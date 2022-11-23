@@ -1,0 +1,112 @@
+type Distributor @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  banner: AWSURL
+  name: String
+  contactemail: AWSEmail
+  contactphone: AWSPhone
+  bio: String
+  location: String
+  IPlocatio: AWSIPAddress
+  Availability: Boolean
+}
+
+type ADplaceholder @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String
+  subtitle: String
+  image: AWSURL
+  link: AWSURL
+  createdby: AWSURL
+  locationcreated: AWSIPAddress
+  usericon: AWSURL
+}
+
+type Product @model @auth(rules: [{allow: public, operations: [create, read, update]}, {allow: owner}]) {
+  id: ID!
+  title: String
+  description: String
+  yearcreated: AWSDate
+  marketprice: Int
+  set: String
+  untitledfield: String
+  askingprice: Int
+  numberavailable: Int
+  uniqueid: ID
+}
+
+type Review @model @auth(rules: [{allow: public, operations: [create, read]}, {allow: owner, operations: [create, read]}]) {
+  id: ID!
+  title: String
+  reviewedby: AWSURL
+  reviewdate: AWSDate
+  reviewbody: String
+  reviewrating: Int
+  reviewapproved: Boolean
+  image: AWSURL
+}
+
+type Streamer @model @auth(rules: [{allow: public, operations: [create, read, update]}, {allow: owner, operations: [create, read, update]}]) {
+  id: ID!
+  username: String
+  name: String
+  contactemail: AWSEmail
+  channel: AWSURL
+  bio: String
+  image: AWSURL
+  membersince: AWSDate
+  location: AWSIPAddress
+  channelcreated: AWSDate
+  banner: AWSURL
+  FBlink: AWSURL
+  YTlink: AWSURL
+  IGlink: AWSURL
+  TWEETlink: AWSURL
+  DRlink: AWSURL
+}
+
+type Store @model @auth(rules: [{allow: public}, {allow: owner}]) {
+  id: ID!
+  brandimage: String
+  brandprimary: String
+  brandsecondary: String
+  brandbio: String
+  brandphone: AWSPhone
+  brandemail: AWSEmail
+  location: AWSIPAddress
+  brandcreated: AWSDateTime
+  membersince: AWSDate
+  banner: AWSURL
+  TCGlink: AWSURL
+  TTlink: AWSURL
+  YTlink: AWSURL
+  FBlink: AWSURL
+  IGlink: AWSURL
+  TWEETlin: AWSURL
+  GSlink: AWSURL
+}
+
+type User @model @auth(rules: [{allow: public, operations: [create, read, update]}, {allow: owner, operations: [create, read, update]}]) {
+  id: ID!
+  memberstart: AWSDate
+  username: String
+  image: AWSURL
+  brandingname: String
+  brandingimage: AWSURL
+  bio: String
+  name: String
+  location: AWSIPAddress
+  banner: AWSURL
+  YTlink: AWSURL
+  FBlink: AWSURL
+  IGlink: AWSURL
+  TWEETlink: AWSURL
+}
+
+type Post @model @auth(rules: [{allow: public, operations: [create, read, update]}]) {
+  id: ID!
+  title: String!
+  author: String!
+  content: String
+  image: AWSURL
+}
+ 

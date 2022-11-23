@@ -1,0 +1,23 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tcgscout-staging-223711-authRole",
+      "UnauthRoleArn": "arn:aws:iam::766480414596:role/amplify-tcgscout-staging-223711-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::766480414596:role/amplify-tcgscout-staging-223711-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-tcgscout-staging-223711-deployment",
+      "UnauthRoleName": "amplify-tcgscout-staging-223711-unauthRole",
+      "StackName": "amplify-tcgscout-staging-223711",
+      "StackId": "arn:aws:cloudformation:us-east-1:766480414596:stack/amplify-tcgscout-staging-223711/0a8027d0-69ed-11ed-ba1b-0e5f7b6f9193",
+      "AmplifyAppId": "d25xxxwx9kauxf"
+    },
+    "categories": {
+      "auth": {
+        "TCGScout": {}
+      },
+      "api": {
+        "TCGScout": {}
+      }
+    }
+  }
+}

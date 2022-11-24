@@ -7,26 +7,20 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import {
-  Flex,
-  Icon,
-  Image,
-  SearchField,
-  Text,
-  View,
-} from "@aws-amplify/ui-react";
+import { Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
+import MyIcon from "./MyIcon";
 export default function NavBar(props) {
   const { overrides, ...rest } = props;
   return (
     <Flex
-      gap="20px"
+      gap="10px"
       direction="row"
-      width="1440px"
+      width="1456px"
       height="unset"
       justifyContent="center"
       alignItems="center"
       position="relative"
-      padding="24px 32px 24px 32px"
+      padding="24px 45px 24px 45px"
       backgroundColor="rgba(255,255,255,1)"
       {...rest}
       {...getOverrideProps(overrides, "NavBar")}
@@ -34,12 +28,11 @@ export default function NavBar(props) {
       <Flex
         gap="2px"
         direction="row"
-        width="unset"
-        height="unset"
+        width="177px"
+        height="55px"
         justifyContent="center"
         alignItems="center"
         shrink="0"
-        alignSelf="stretch"
         position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Logo29767073")}
@@ -87,132 +80,262 @@ export default function NavBar(props) {
         ></Text>
       </Flex>
       <Flex
-        gap="40px"
-        direction="row"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
-        alignItems="center"
-        grow="1"
-        shrink="1"
-        basis="0"
-        position="relative"
-        padding="0px 0px 0px 0px"
-        {...getOverrideProps(overrides, "Frame 32129767076")}
-      >
-        <Text
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="400"
-          color="rgba(0,0,0,1)"
-          lineHeight="24px"
-          textAlign="left"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          letterSpacing="0.01px"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Dashboard"
-          {...getOverrideProps(overrides, "Dashboard")}
-        ></Text>
-        <Text
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="400"
-          color="rgba(0,0,0,1)"
-          lineHeight="24px"
-          textAlign="left"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          letterSpacing="0.01px"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Jobs"
-          {...getOverrideProps(overrides, "Jobs")}
-        ></Text>
-        <Text
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="400"
-          color="rgba(0,0,0,1)"
-          lineHeight="24px"
-          textAlign="left"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          letterSpacing="0.01px"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Applicants"
-          {...getOverrideProps(overrides, "Applicants")}
-        ></Text>
-        <Text
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="400"
-          color="rgba(0,0,0,1)"
-          lineHeight="24px"
-          textAlign="left"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          letterSpacing="0.01px"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Company"
-          {...getOverrideProps(overrides, "Company")}
-        ></Text>
-      </Flex>
-      <Flex
         gap="32px"
         direction="row"
-        width="unset"
+        width="1204px"
         height="unset"
         justifyContent="flex-end"
         alignItems="center"
-        grow="1"
-        shrink="1"
-        basis="0"
+        shrink="0"
         position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Frame 32129767081")}
       >
-        <SearchField
+        <Flex
+          gap="40px"
+          direction="row"
+          width="805px"
+          height="unset"
+          justifyContent="center"
+          alignItems="center"
           shrink="0"
-          placeholder="Placeholder"
-          size="default"
-          isDisabled={false}
-          labelHidden={true}
-          variation="default"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          {...getOverrideProps(overrides, "Frame 32129767076")}
+        >
+          <Text
+            fontFamily="Inter"
+            fontSize="16px"
+            fontWeight="400"
+            color="rgba(0,0,0,1)"
+            lineHeight="24px"
+            textAlign="left"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            letterSpacing="0.01px"
+            width="unset"
+            height="unset"
+            gap="unset"
+            alignItems="unset"
+            shrink="0"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Stores"
+            {...getOverrideProps(overrides, "Stores")}
+          ></Text>
+          <Text
+            fontFamily="Inter"
+            fontSize="16px"
+            fontWeight="400"
+            color="rgba(0,0,0,1)"
+            lineHeight="24px"
+            textAlign="left"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            letterSpacing="0.01px"
+            width="unset"
+            height="unset"
+            gap="unset"
+            alignItems="unset"
+            shrink="0"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Streamers"
+            {...getOverrideProps(overrides, "Streamers")}
+          ></Text>
+          <Text
+            fontFamily="Inter"
+            fontSize="16px"
+            fontWeight="400"
+            color="rgba(0,0,0,1)"
+            lineHeight="24px"
+            textAlign="left"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            letterSpacing="0.01px"
+            width="unset"
+            height="unset"
+            gap="unset"
+            alignItems="unset"
+            shrink="0"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Brands"
+            {...getOverrideProps(overrides, "Brands")}
+          ></Text>
+          <Text
+            fontFamily="Inter"
+            fontSize="16px"
+            fontWeight="400"
+            color="rgba(0,0,0,1)"
+            lineHeight="24px"
+            textAlign="left"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            letterSpacing="0.01px"
+            width="unset"
+            height="unset"
+            gap="unset"
+            alignItems="unset"
+            shrink="0"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Exclusives"
+            {...getOverrideProps(overrides, "Exclusives")}
+          ></Text>
+        </Flex>
+        <Flex
+          gap="8px"
+          direction="column"
+          width="205px"
+          height="unset"
+          justifyContent="flex-start"
+          alignItems="flex-start"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "SearchField")}
-        ></SearchField>
-        <View
+        >
+          <Flex
+            gap="0"
+            direction="column"
+            width="unset"
+            height="unset"
+            justifyContent="flex-start"
+            alignItems="flex-start"
+            shrink="0"
+            alignSelf="stretch"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            {...getOverrideProps(overrides, "InputGroup")}
+          >
+            <Flex
+              gap="10px"
+              direction="row"
+              width="unset"
+              height="unset"
+              justifyContent="center"
+              alignItems="center"
+              shrink="0"
+              alignSelf="stretch"
+              position="relative"
+              border="1px SOLID rgba(174,179,183,1)"
+              borderRadius="5px"
+              padding="0px 0px 0px 16px"
+              {...getOverrideProps(overrides, "Input")}
+            >
+              <Text
+                fontFamily="Inter"
+                fontSize="16px"
+                fontWeight="400"
+                color="rgba(128,128,128,1)"
+                lineHeight="24px"
+                textAlign="left"
+                display="block"
+                direction="column"
+                justifyContent="unset"
+                width="unset"
+                height="unset"
+                gap="unset"
+                alignItems="unset"
+                grow="1"
+                shrink="1"
+                basis="0"
+                position="relative"
+                padding="0px 0px 0px 0px"
+                whiteSpace="pre-wrap"
+                children="Placeholder"
+                {...getOverrideProps(overrides, "placeholder")}
+              ></Text>
+              <Flex
+                gap="0"
+                direction="row"
+                width="unset"
+                height="unset"
+                justifyContent="center"
+                alignItems="center"
+                shrink="0"
+                position="relative"
+                border="1px SOLID rgba(174,179,183,1)"
+                borderRadius="5px"
+                padding="8px 16px 8px 16px"
+                {...getOverrideProps(overrides, "Button")}
+              >
+                <Text
+                  fontFamily="Inter"
+                  fontSize="16px"
+                  fontWeight="700"
+                  color="rgba(13,26,38,1)"
+                  lineHeight="24px"
+                  textAlign="left"
+                  display="block"
+                  direction="column"
+                  justifyContent="unset"
+                  width="unset"
+                  height="unset"
+                  gap="unset"
+                  alignItems="unset"
+                  shrink="0"
+                  position="relative"
+                  padding="0px 0px 0px 0px"
+                  whiteSpace="pre-wrap"
+                  children=""
+                  {...getOverrideProps(overrides, "label")}
+                ></Text>
+                <View
+                  width="26px"
+                  height="27px"
+                  display="block"
+                  gap="unset"
+                  alignItems="unset"
+                  justifyContent="unset"
+                  overflow="hidden"
+                  shrink="0"
+                  position="relative"
+                  padding="0px 0px 0px 0px"
+                  {...getOverrideProps(overrides, "Button Icon")}
+                >
+                  <Icon
+                    width="18.95px"
+                    height="19.68px"
+                    viewBox={{
+                      minX: 0,
+                      minY: 0,
+                      width: 18.947265625,
+                      height: 19.67626953125,
+                    }}
+                    paths={[
+                      {
+                        d: "M13.5417 12.375L12.6858 12.375L12.3825 12.0712C13.4442 10.7887 14.0833 9.12375 14.0833 7.3125C14.0833 3.27375 10.9308 0 7.04167 0C3.1525 0 0 3.27375 0 7.3125C0 11.3512 3.1525 14.625 7.04167 14.625C8.78583 14.625 10.3892 13.9612 11.6242 12.8587L11.9167 13.1737L11.9167 14.0625L17.3333 19.6762L18.9475 18L13.5417 12.375L13.5417 12.375ZM7.04167 12.375C4.34417 12.375 2.16667 10.1137 2.16667 7.3125C2.16667 4.51125 4.34417 2.25 7.04167 2.25C9.73917 2.25 11.9167 4.51125 11.9167 7.3125C11.9167 10.1137 9.73917 12.375 7.04167 12.375Z",
+                        fill: "rgba(13,26,38,1)",
+                        fillRule: "nonzero",
+                      },
+                    ]}
+                    display="block"
+                    gap="unset"
+                    alignItems="unset"
+                    justifyContent="unset"
+                    position="absolute"
+                    top="12.5%"
+                    bottom="14.63%"
+                    left="12.5%"
+                    right="14.62%"
+                    {...getOverrideProps(overrides, "Vector")}
+                  ></Icon>
+                </View>
+              </Flex>
+            </Flex>
+          </Flex>
+        </Flex>
+        <MyIcon
           width="24px"
           height="24px"
           display="block"
@@ -223,34 +346,12 @@ export default function NavBar(props) {
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "Icon")}
-        >
-          <Icon
-            width="16px"
-            height="19.5px"
-            viewBox={{ minX: 0, minY: 0, width: 16, height: 19.5 }}
-            paths={[
-              {
-                d: "M8 19.5C9.1 19.5 10 18.6 10 17.5L6 17.5C6 18.6 6.9 19.5 8 19.5ZM14 13.5L14 8.5C14 5.43 12.37 2.86 9.5 2.18L9.5 1.5C9.5 0.67 8.83 0 8 0C7.17 0 6.5 0.67 6.5 1.5L6.5 2.18C3.64 2.86 2 5.42 2 8.5L2 13.5L0 15.5L0 16.5L16 16.5L16 15.5L14 13.5ZM12 14.5L4 14.5L4 8.5C4 6.02 5.51 4 8 4C10.49 4 12 6.02 12 8.5L12 14.5Z",
-                fill: "rgba(51,51,51,1)",
-                fillRule: "nonzero",
-              },
-            ]}
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            position="absolute"
-            top="10.42%"
-            bottom="8.33%"
-            left="16.67%"
-            right="16.67%"
-            {...getOverrideProps(overrides, "Vector")}
-          ></Icon>
-        </View>
+          type="favorite_border"
+          {...getOverrideProps(overrides, "MyIcon")}
+        ></MyIcon>
         <Image
-          width="45px"
-          height="45px"
+          width="56px"
+          height="55px"
           display="block"
           gap="unset"
           alignItems="unset"

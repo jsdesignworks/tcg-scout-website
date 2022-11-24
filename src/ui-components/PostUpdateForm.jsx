@@ -29,17 +29,11 @@ export default function PostUpdateForm(props) {
     author: undefined,
     content: undefined,
     image: undefined,
-    userID: undefined,
-    storeID: undefined,
-    streamerID: undefined,
   };
   const [title, setTitle] = React.useState(initialValues.title);
   const [author, setAuthor] = React.useState(initialValues.author);
   const [content, setContent] = React.useState(initialValues.content);
   const [image, setImage] = React.useState(initialValues.image);
-  const [userID, setUserID] = React.useState(initialValues.userID);
-  const [storeID, setStoreID] = React.useState(initialValues.storeID);
-  const [streamerID, setStreamerID] = React.useState(initialValues.streamerID);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = { ...initialValues, ...postRecord };
@@ -47,9 +41,6 @@ export default function PostUpdateForm(props) {
     setAuthor(cleanValues.author);
     setContent(cleanValues.content);
     setImage(cleanValues.image);
-    setUserID(cleanValues.userID);
-    setStoreID(cleanValues.storeID);
-    setStreamerID(cleanValues.streamerID);
     setErrors({});
   };
   const [postRecord, setPostRecord] = React.useState(post);
@@ -66,9 +57,6 @@ export default function PostUpdateForm(props) {
     author: [{ type: "Required" }],
     content: [],
     image: [{ type: "URL" }],
-    userID: [{ type: "Required" }],
-    storeID: [{ type: "Required" }],
-    streamerID: [{ type: "Required" }],
   };
   const runValidationTasks = async (fieldName, value) => {
     let validationResponse = validateField(value, validations[fieldName]);
@@ -92,9 +80,6 @@ export default function PostUpdateForm(props) {
           author,
           content,
           image: image || undefined,
-          userID,
-          storeID,
-          streamerID,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -149,9 +134,6 @@ export default function PostUpdateForm(props) {
               author,
               content,
               image,
-              userID,
-              storeID,
-              streamerID,
             };
             const result = onChange(modelFields);
             value = result?.title ?? value;
@@ -179,9 +161,6 @@ export default function PostUpdateForm(props) {
               author: value,
               content,
               image,
-              userID,
-              storeID,
-              streamerID,
             };
             const result = onChange(modelFields);
             value = result?.author ?? value;
@@ -209,9 +188,6 @@ export default function PostUpdateForm(props) {
               author,
               content: value,
               image,
-              userID,
-              storeID,
-              streamerID,
             };
             const result = onChange(modelFields);
             value = result?.content ?? value;
@@ -239,9 +215,6 @@ export default function PostUpdateForm(props) {
               author,
               content,
               image: value,
-              userID,
-              storeID,
-              streamerID,
             };
             const result = onChange(modelFields);
             value = result?.image ?? value;
@@ -255,96 +228,6 @@ export default function PostUpdateForm(props) {
         errorMessage={errors.image?.errorMessage}
         hasError={errors.image?.hasError}
         {...getOverrideProps(overrides, "image")}
-      ></TextField>
-      <TextField
-        label="User id"
-        isRequired={true}
-        isReadOnly={false}
-        defaultValue={userID}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              title,
-              author,
-              content,
-              image,
-              userID: value,
-              storeID,
-              streamerID,
-            };
-            const result = onChange(modelFields);
-            value = result?.userID ?? value;
-          }
-          if (errors.userID?.hasError) {
-            runValidationTasks("userID", value);
-          }
-          setUserID(value);
-        }}
-        onBlur={() => runValidationTasks("userID", userID)}
-        errorMessage={errors.userID?.errorMessage}
-        hasError={errors.userID?.hasError}
-        {...getOverrideProps(overrides, "userID")}
-      ></TextField>
-      <TextField
-        label="Store id"
-        isRequired={true}
-        isReadOnly={false}
-        defaultValue={storeID}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              title,
-              author,
-              content,
-              image,
-              userID,
-              storeID: value,
-              streamerID,
-            };
-            const result = onChange(modelFields);
-            value = result?.storeID ?? value;
-          }
-          if (errors.storeID?.hasError) {
-            runValidationTasks("storeID", value);
-          }
-          setStoreID(value);
-        }}
-        onBlur={() => runValidationTasks("storeID", storeID)}
-        errorMessage={errors.storeID?.errorMessage}
-        hasError={errors.storeID?.hasError}
-        {...getOverrideProps(overrides, "storeID")}
-      ></TextField>
-      <TextField
-        label="Streamer id"
-        isRequired={true}
-        isReadOnly={false}
-        defaultValue={streamerID}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              title,
-              author,
-              content,
-              image,
-              userID,
-              storeID,
-              streamerID: value,
-            };
-            const result = onChange(modelFields);
-            value = result?.streamerID ?? value;
-          }
-          if (errors.streamerID?.hasError) {
-            runValidationTasks("streamerID", value);
-          }
-          setStreamerID(value);
-        }}
-        onBlur={() => runValidationTasks("streamerID", streamerID)}
-        errorMessage={errors.streamerID?.errorMessage}
-        hasError={errors.streamerID?.hasError}
-        {...getOverrideProps(overrides, "streamerID")}
       ></TextField>
       <Flex
         justifyContent="space-between"

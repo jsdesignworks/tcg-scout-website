@@ -18,18 +18,12 @@ export declare type PostUpdateFormInputValues = {
     author?: string;
     content?: string;
     image?: string;
-    userID?: string;
-    storeID?: string;
-    streamerID?: string;
 };
 export declare type PostUpdateFormValidationValues = {
     title?: ValidationFunction<string>;
     author?: ValidationFunction<string>;
     content?: ValidationFunction<string>;
     image?: ValidationFunction<string>;
-    userID?: ValidationFunction<string>;
-    storeID?: ValidationFunction<string>;
-    streamerID?: ValidationFunction<string>;
 };
 export declare type FormProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type PostUpdateFormOverridesProps = {
@@ -38,9 +32,6 @@ export declare type PostUpdateFormOverridesProps = {
     author?: FormProps<TextFieldProps>;
     content?: FormProps<TextFieldProps>;
     image?: FormProps<TextFieldProps>;
-    userID?: FormProps<TextFieldProps>;
-    storeID?: FormProps<TextFieldProps>;
-    streamerID?: FormProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type PostUpdateFormProps = React.PropsWithChildren<{
     overrides?: PostUpdateFormOverridesProps | undefined | null;

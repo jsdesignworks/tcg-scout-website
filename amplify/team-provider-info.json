@@ -17,6 +17,9 @@
       },
       "api": {
         "TCGScout": {}
+      },
+      "storage": {
+        "s3tcgscoutstorage": {}
       }
     }
   }

@@ -41,6 +41,7 @@ export default function StoreCreateForm(props) {
     IGlink: undefined,
     TWEETlin: undefined,
     GSlink: undefined,
+    storelocation: undefined,
   };
   const [brandimage, setBrandimage] = React.useState(initialValues.brandimage);
   const [brandprimary, setBrandprimary] = React.useState(
@@ -67,6 +68,9 @@ export default function StoreCreateForm(props) {
   const [IGlink, setIGlink] = React.useState(initialValues.IGlink);
   const [TWEETlin, setTWEETlin] = React.useState(initialValues.TWEETlin);
   const [GSlink, setGSlink] = React.useState(initialValues.GSlink);
+  const [storelocation, setStorelocation] = React.useState(
+    initialValues.storelocation
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setBrandimage(initialValues.brandimage);
@@ -86,6 +90,7 @@ export default function StoreCreateForm(props) {
     setIGlink(initialValues.IGlink);
     setTWEETlin(initialValues.TWEETlin);
     setGSlink(initialValues.GSlink);
+    setStorelocation(initialValues.storelocation);
     setErrors({});
   };
   const validations = {
@@ -106,6 +111,7 @@ export default function StoreCreateForm(props) {
     IGlink: [{ type: "URL" }],
     TWEETlin: [{ type: "URL" }],
     GSlink: [{ type: "URL" }],
+    storelocation: [],
   };
   const runValidationTasks = async (fieldName, value) => {
     let validationResponse = validateField(value, validations[fieldName]);
@@ -142,6 +148,7 @@ export default function StoreCreateForm(props) {
           IGlink: IGlink || undefined,
           TWEETlin: TWEETlin || undefined,
           GSlink: GSlink || undefined,
+          storelocation,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -207,6 +214,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.brandimage ?? value;
@@ -246,6 +254,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.brandprimary ?? value;
@@ -285,6 +294,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.brandsecondary ?? value;
@@ -324,6 +334,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.brandbio ?? value;
@@ -364,6 +375,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.brandphone ?? value;
@@ -403,6 +415,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.brandemail ?? value;
@@ -442,6 +455,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.location ?? value;
@@ -482,6 +496,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.brandcreated ?? value;
@@ -522,6 +537,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.membersince ?? value;
@@ -561,6 +577,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.banner ?? value;
@@ -600,6 +617,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.TCGlink ?? value;
@@ -639,6 +657,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.TTlink ?? value;
@@ -678,6 +697,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.YTlink ?? value;
@@ -717,6 +737,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.FBlink ?? value;
@@ -756,6 +777,7 @@ export default function StoreCreateForm(props) {
               IGlink: value,
               TWEETlin,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.IGlink ?? value;
@@ -795,6 +817,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin: value,
               GSlink,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.TWEETlin ?? value;
@@ -834,6 +857,7 @@ export default function StoreCreateForm(props) {
               IGlink,
               TWEETlin,
               GSlink: value,
+              storelocation,
             };
             const result = onChange(modelFields);
             value = result?.GSlink ?? value;
@@ -847,6 +871,46 @@ export default function StoreCreateForm(props) {
         errorMessage={errors.GSlink?.errorMessage}
         hasError={errors.GSlink?.hasError}
         {...getOverrideProps(overrides, "GSlink")}
+      ></TextField>
+      <TextField
+        label="Storelocation"
+        isRequired={false}
+        isReadOnly={false}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              brandimage,
+              brandprimary,
+              brandsecondary,
+              brandbio,
+              brandphone,
+              brandemail,
+              location,
+              brandcreated,
+              membersince,
+              banner,
+              TCGlink,
+              TTlink,
+              YTlink,
+              FBlink,
+              IGlink,
+              TWEETlin,
+              GSlink,
+              storelocation: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.storelocation ?? value;
+          }
+          if (errors.storelocation?.hasError) {
+            runValidationTasks("storelocation", value);
+          }
+          setStorelocation(value);
+        }}
+        onBlur={() => runValidationTasks("storelocation", storelocation)}
+        errorMessage={errors.storelocation?.errorMessage}
+        hasError={errors.storelocation?.hasError}
+        {...getOverrideProps(overrides, "storelocation")}
       ></TextField>
       <Flex
         justifyContent="space-between"

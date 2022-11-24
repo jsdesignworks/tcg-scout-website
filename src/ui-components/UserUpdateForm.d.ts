@@ -27,6 +27,7 @@ export declare type UserUpdateFormInputValues = {
     FBlink?: string;
     IGlink?: string;
     TWEETlink?: string;
+    userlocation?: string;
 };
 export declare type UserUpdateFormValidationValues = {
     memberstart?: ValidationFunction<string>;
@@ -42,6 +43,7 @@ export declare type UserUpdateFormValidationValues = {
     FBlink?: ValidationFunction<string>;
     IGlink?: ValidationFunction<string>;
     TWEETlink?: ValidationFunction<string>;
+    userlocation?: ValidationFunction<string>;
 };
 export declare type FormProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type UserUpdateFormOverridesProps = {
@@ -59,6 +61,7 @@ export declare type UserUpdateFormOverridesProps = {
     FBlink?: FormProps<TextFieldProps>;
     IGlink?: FormProps<TextFieldProps>;
     TWEETlink?: FormProps<TextFieldProps>;
+    userlocation?: FormProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type UserUpdateFormProps = React.PropsWithChildren<{
     overrides?: UserUpdateFormOverridesProps | undefined | null;

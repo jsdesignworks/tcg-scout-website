@@ -5,12 +5,16 @@
  **************************************************************************/
 
 import * as React from "react";
-import { Store } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { FlexProps } from "@aws-amplify/ui-react";
-export declare type ProductCardProps = React.PropsWithChildren<Partial<FlexProps> & {
-    store?: Store;
+import { ReviewCardProps } from "./ReviewCard";
+import { CollectionProps } from "@aws-amplify/ui-react";
+export declare type ReviewCollectionProps = React.PropsWithChildren<Partial<CollectionProps<any>> & {
+    items?: any[];
+    overrideItems?: (collectionItem: {
+        item: any;
+        index: number;
+    }) => ReviewCardProps;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function ProductCard(props: ProductCardProps): React.ReactElement;
+export default function ReviewCollection(props: ReviewCollectionProps): React.ReactElement;

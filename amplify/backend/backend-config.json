@@ -69,5 +69,12 @@
         }
       }
     }
+  },
+  "storage": {
+    "s3tcgscoutstorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
   }
 }

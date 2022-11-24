@@ -4,6 +4,7 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
+export { default as Favicon } from "./Favicon";
 export { default as TallCard } from "./TallCard";
 export { default as MarketingFooter } from "./MarketingFooter";
 export { default as Features2x2 } from "./Features2x2";
@@ -15,12 +16,14 @@ export { default as FormCheckout } from "./FormCheckout";
 export { default as FAQItem } from "./FAQItem";
 export { default as ContactUs } from "./ContactUs";
 export { default as NavBar } from "./NavBar";
+export { default as ReviewCollection } from "./ReviewCollection";
 export { default as PostCollection } from "./PostCollection";
 export { default as ProductCard } from "./ProductCard";
 export { default as HeroLayout2 } from "./HeroLayout2";
 export { default as HeroLayout1 } from "./HeroLayout1";
-export { default as EditProfileCollection } from "./EditProfileCollection";
+export { default as StoreCollection } from "./StoreCollection";
 export { default as DonateCard } from "./DonateCard";
+export { default as Logowhite } from "./Logowhite";
 export { default as HeroLayout3 } from "./HeroLayout3";
 export { default as FeaturesText2x2 } from "./FeaturesText2x2";
 export { default as SocialPost } from "./SocialPost";
@@ -31,6 +34,7 @@ export { default as CommentCard } from "./CommentCard";
 export { default as Features2x3 } from "./Features2x3";
 export { default as EditProfile } from "./EditProfile";
 export { default as StandardCard } from "./StandardCard";
+export { default as Logoblack } from "./Logoblack";
 export { default as Ampligram } from "./Ampligram";
 export { default as ItemCard } from "./ItemCard";
 export { default as MyIcon } from "./MyIcon";
@@ -42,13 +46,9 @@ export { default as ADplaceholderCreateForm } from "./ADplaceholderCreateForm";
 export { default as ADplaceholderUpdateForm } from "./ADplaceholderUpdateForm";
 export { default as ProductCreateForm } from "./ProductCreateForm";
 export { default as ProductUpdateForm } from "./ProductUpdateForm";
-export { default as ReviewCreateForm } from "./ReviewCreateForm";
-export { default as ReviewUpdateForm } from "./ReviewUpdateForm";
 export { default as StreamerCreateForm } from "./StreamerCreateForm";
 export { default as StreamerUpdateForm } from "./StreamerUpdateForm";
 export { default as StoreCreateForm } from "./StoreCreateForm";
 export { default as StoreUpdateForm } from "./StoreUpdateForm";
 export { default as UserCreateForm } from "./UserCreateForm";
 export { default as UserUpdateForm } from "./UserUpdateForm";
-export { default as PostCreateForm } from "./PostCreateForm";
-export { default as PostUpdateForm } from "./PostUpdateForm";

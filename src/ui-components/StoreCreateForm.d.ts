@@ -30,6 +30,7 @@ export declare type StoreCreateFormInputValues = {
     IGlink?: string;
     TWEETlin?: string;
     GSlink?: string;
+    storelocation?: string;
 };
 export declare type StoreCreateFormValidationValues = {
     brandimage?: ValidationFunction<string>;
@@ -49,6 +50,7 @@ export declare type StoreCreateFormValidationValues = {
     IGlink?: ValidationFunction<string>;
     TWEETlin?: ValidationFunction<string>;
     GSlink?: ValidationFunction<string>;
+    storelocation?: ValidationFunction<string>;
 };
 export declare type FormProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type StoreCreateFormOverridesProps = {
@@ -70,6 +72,7 @@ export declare type StoreCreateFormOverridesProps = {
     IGlink?: FormProps<TextFieldProps>;
     TWEETlin?: FormProps<TextFieldProps>;
     GSlink?: FormProps<TextFieldProps>;
+    storelocation?: FormProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type StoreCreateFormProps = React.PropsWithChildren<{
     overrides?: StoreCreateFormOverridesProps | undefined | null;

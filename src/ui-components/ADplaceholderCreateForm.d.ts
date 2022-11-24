@@ -20,9 +20,6 @@ export declare type ADplaceholderCreateFormInputValues = {
     createdby?: string;
     locationcreated?: string;
     usericon?: string;
-    userID?: string;
-    streamerID?: string;
-    storeID?: string;
 };
 export declare type ADplaceholderCreateFormValidationValues = {
     title?: ValidationFunction<string>;
@@ -32,9 +29,6 @@ export declare type ADplaceholderCreateFormValidationValues = {
     createdby?: ValidationFunction<string>;
     locationcreated?: ValidationFunction<string>;
     usericon?: ValidationFunction<string>;
-    userID?: ValidationFunction<string>;
-    streamerID?: ValidationFunction<string>;
-    storeID?: ValidationFunction<string>;
 };
 export declare type FormProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ADplaceholderCreateFormOverridesProps = {
@@ -46,9 +40,6 @@ export declare type ADplaceholderCreateFormOverridesProps = {
     createdby?: FormProps<TextFieldProps>;
     locationcreated?: FormProps<TextFieldProps>;
     usericon?: FormProps<TextFieldProps>;
-    userID?: FormProps<TextFieldProps>;
-    streamerID?: FormProps<TextFieldProps>;
-    storeID?: FormProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type ADplaceholderCreateFormProps = React.PropsWithChildren<{
     overrides?: ADplaceholderCreateFormOverridesProps | undefined | null;

@@ -5,12 +5,9 @@
  **************************************************************************/
 
 import * as React from "react";
-import { Store } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { FlexProps } from "@aws-amplify/ui-react";
-export declare type ProductCardProps = React.PropsWithChildren<Partial<FlexProps> & {
-    store?: Store;
-} & {
+import { ViewProps } from "@aws-amplify/ui-react";
+export declare type LogowhiteProps = React.PropsWithChildren<Partial<ViewProps> & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function ProductCard(props: ProductCardProps): React.ReactElement;
+export default function Logowhite(props: LogowhiteProps): React.ReactElement;

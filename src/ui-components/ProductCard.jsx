@@ -19,7 +19,7 @@ import {
 } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function ProductCard(props) {
-  const { overrides, ...rest } = props;
+  const { store, overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -45,6 +45,7 @@ export default function ProductCard(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         objectFit="cover"
+        src={store?.brandimage}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
@@ -178,7 +179,7 @@ export default function ProductCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Information about this product."
+          children={store?.brandbio}
           {...getOverrideProps(overrides, "Information about this product.")}
         ></Text>
         <Flex

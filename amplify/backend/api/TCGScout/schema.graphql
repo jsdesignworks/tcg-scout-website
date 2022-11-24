@@ -43,6 +43,7 @@ type Review @model @auth(rules: [{allow: public, operations: [create, read]}, {a
   reviewrating: Int
   reviewapproved: Boolean
   image: AWSURL
+  userID: ID! @index(name: "byUser")
 }
 
 type Streamer @model @auth(rules: [{allow: public, operations: [create, read, update]}, {allow: owner, operations: [create, read, update]}]) {
@@ -83,6 +84,7 @@ type Store @model @auth(rules: [{allow: public}, {allow: owner}]) {
   IGlink: AWSURL
   TWEETlin: AWSURL
   GSlink: AWSURL
+  storelocation: String
 }
 
 type User @model @auth(rules: [{allow: public, operations: [create, read, update]}, {allow: owner, operations: [create, read, update]}]) {
@@ -100,6 +102,9 @@ type User @model @auth(rules: [{allow: public, operations: [create, read, update
   FBlink: AWSURL
   IGlink: AWSURL
   TWEETlink: AWSURL
+  userlocation: String
+  Reviews: [Review] @hasMany(indexName: "byUser", fields: ["id"])
+  Posts: [Post] @hasMany(indexName: "byUser", fields: ["id"])
 }
 
 type Post @model @auth(rules: [{allow: public, operations: [create, read, update]}]) {
@@ -108,5 +113,6 @@ type Post @model @auth(rules: [{allow: public, operations: [create, read, update
   author: String!
   content: String
   image: AWSURL
+  userID: ID! @index(name: "byUser")
 }
  

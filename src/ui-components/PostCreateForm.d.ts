@@ -17,18 +17,12 @@ export declare type PostCreateFormInputValues = {
     author?: string;
     content?: string;
     image?: string;
-    userID?: string;
-    storeID?: string;
-    streamerID?: string;
 };
 export declare type PostCreateFormValidationValues = {
     title?: ValidationFunction<string>;
     author?: ValidationFunction<string>;
     content?: ValidationFunction<string>;
     image?: ValidationFunction<string>;
-    userID?: ValidationFunction<string>;
-    storeID?: ValidationFunction<string>;
-    streamerID?: ValidationFunction<string>;
 };
 export declare type FormProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type PostCreateFormOverridesProps = {
@@ -37,9 +31,6 @@ export declare type PostCreateFormOverridesProps = {
     author?: FormProps<TextFieldProps>;
     content?: FormProps<TextFieldProps>;
     image?: FormProps<TextFieldProps>;
-    userID?: FormProps<TextFieldProps>;
-    storeID?: FormProps<TextFieldProps>;
-    streamerID?: FormProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type PostCreateFormProps = React.PropsWithChildren<{
     overrides?: PostCreateFormOverridesProps | undefined | null;

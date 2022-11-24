@@ -37,6 +37,7 @@ export default function UserCreateForm(props) {
     FBlink: undefined,
     IGlink: undefined,
     TWEETlink: undefined,
+    userlocation: undefined,
   };
   const [memberstart, setMemberstart] = React.useState(
     initialValues.memberstart
@@ -57,6 +58,9 @@ export default function UserCreateForm(props) {
   const [FBlink, setFBlink] = React.useState(initialValues.FBlink);
   const [IGlink, setIGlink] = React.useState(initialValues.IGlink);
   const [TWEETlink, setTWEETlink] = React.useState(initialValues.TWEETlink);
+  const [userlocation, setUserlocation] = React.useState(
+    initialValues.userlocation
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setMemberstart(initialValues.memberstart);
@@ -72,6 +76,7 @@ export default function UserCreateForm(props) {
     setFBlink(initialValues.FBlink);
     setIGlink(initialValues.IGlink);
     setTWEETlink(initialValues.TWEETlink);
+    setUserlocation(initialValues.userlocation);
     setErrors({});
   };
   const validations = {
@@ -88,6 +93,7 @@ export default function UserCreateForm(props) {
     FBlink: [{ type: "URL" }],
     IGlink: [{ type: "URL" }],
     TWEETlink: [{ type: "URL" }],
+    userlocation: [],
   };
   const runValidationTasks = async (fieldName, value) => {
     let validationResponse = validateField(value, validations[fieldName]);
@@ -120,6 +126,7 @@ export default function UserCreateForm(props) {
           FBlink: FBlink || undefined,
           IGlink: IGlink || undefined,
           TWEETlink: TWEETlink || undefined,
+          userlocation,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -182,6 +189,7 @@ export default function UserCreateForm(props) {
               FBlink,
               IGlink,
               TWEETlink,
+              userlocation,
             };
             const result = onChange(modelFields);
             value = result?.memberstart ?? value;
@@ -217,6 +225,7 @@ export default function UserCreateForm(props) {
               FBlink,
               IGlink,
               TWEETlink,
+              userlocation,
             };
             const result = onChange(modelFields);
             value = result?.username ?? value;
@@ -252,6 +261,7 @@ export default function UserCreateForm(props) {
               FBlink,
               IGlink,
               TWEETlink,
+              userlocation,
             };
             const result = onChange(modelFields);
             value = result?.image ?? value;
@@ -287,6 +297,7 @@ export default function UserCreateForm(props) {
               FBlink,
               IGlink,
               TWEETlink,
+              userlocation,
             };
             const result = onChange(modelFields);
             value = result?.brandingname ?? value;
@@ -322,6 +333,7 @@ export default function UserCreateForm(props) {
               FBlink,
               IGlink,
               TWEETlink,
+              userlocation,
             };
             const result = onChange(modelFields);
             value = result?.brandingimage ?? value;
@@ -357,6 +369,7 @@ export default function UserCreateForm(props) {
               FBlink,
               IGlink,
               TWEETlink,
+              userlocation,
             };
             const result = onChange(modelFields);
             value = result?.bio ?? value;
@@ -392,6 +405,7 @@ export default function UserCreateForm(props) {
               FBlink,
               IGlink,
               TWEETlink,
+              userlocation,
             };
             const result = onChange(modelFields);
             value = result?.name ?? value;
@@ -427,6 +441,7 @@ export default function UserCreateForm(props) {
               FBlink,
               IGlink,
               TWEETlink,
+              userlocation,
             };
             const result = onChange(modelFields);
             value = result?.location ?? value;
@@ -462,6 +477,7 @@ export default function UserCreateForm(props) {
               FBlink,
               IGlink,
               TWEETlink,
+              userlocation,
             };
             const result = onChange(modelFields);
             value = result?.banner ?? value;
@@ -497,6 +513,7 @@ export default function UserCreateForm(props) {
               FBlink,
               IGlink,
               TWEETlink,
+              userlocation,
             };
             const result = onChange(modelFields);
             value = result?.YTlink ?? value;
@@ -532,6 +549,7 @@ export default function UserCreateForm(props) {
               FBlink: value,
               IGlink,
               TWEETlink,
+              userlocation,
             };
             const result = onChange(modelFields);
             value = result?.FBlink ?? value;
@@ -567,6 +585,7 @@ export default function UserCreateForm(props) {
               FBlink,
               IGlink: value,
               TWEETlink,
+              userlocation,
             };
             const result = onChange(modelFields);
             value = result?.IGlink ?? value;
@@ -602,6 +621,7 @@ export default function UserCreateForm(props) {
               FBlink,
               IGlink,
               TWEETlink: value,
+              userlocation,
             };
             const result = onChange(modelFields);
             value = result?.TWEETlink ?? value;
@@ -615,6 +635,42 @@ export default function UserCreateForm(props) {
         errorMessage={errors.TWEETlink?.errorMessage}
         hasError={errors.TWEETlink?.hasError}
         {...getOverrideProps(overrides, "TWEETlink")}
+      ></TextField>
+      <TextField
+        label="Userlocation"
+        isRequired={false}
+        isReadOnly={false}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              memberstart,
+              username,
+              image,
+              brandingname,
+              brandingimage,
+              bio,
+              name,
+              location,
+              banner,
+              YTlink,
+              FBlink,
+              IGlink,
+              TWEETlink,
+              userlocation: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.userlocation ?? value;
+          }
+          if (errors.userlocation?.hasError) {
+            runValidationTasks("userlocation", value);
+          }
+          setUserlocation(value);
+        }}
+        onBlur={() => runValidationTasks("userlocation", userlocation)}
+        errorMessage={errors.userlocation?.errorMessage}
+        hasError={errors.userlocation?.hasError}
+        {...getOverrideProps(overrides, "userlocation")}
       ></TextField>
       <Flex
         justifyContent="space-between"

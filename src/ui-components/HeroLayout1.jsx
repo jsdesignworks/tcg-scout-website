@@ -58,7 +58,7 @@ export default function HeroLayout1(props) {
     <Flex
       gap="0"
       direction="row"
-      width="1440px"
+      width="100%"
       height="500px"
       justifyContent="center"
       alignItems="center"

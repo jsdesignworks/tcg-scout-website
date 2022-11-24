@@ -1,6 +1,6 @@
 import { ModelInit, MutableModel, __modelMeta__, ManagedIdentifier } from "@aws-amplify/datastore";
 // @ts-ignore
-import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
+import { LazyLoading, LazyLoadingDisabled, AsyncCollection } from "@aws-amplify/datastore";
 
 
 
@@ -61,9 +61,6 @@ type EagerADplaceholder = {
   readonly createdby?: string | null;
   readonly locationcreated?: string | null;
   readonly usericon?: string | null;
-  readonly userID: string;
-  readonly streamerID: string;
-  readonly storeID: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -81,9 +78,6 @@ type LazyADplaceholder = {
   readonly createdby?: string | null;
   readonly locationcreated?: string | null;
   readonly usericon?: string | null;
-  readonly userID: string;
-  readonly streamerID: string;
-  readonly storeID: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -151,6 +145,7 @@ type EagerReview = {
   readonly reviewrating?: number | null;
   readonly reviewapproved?: boolean | null;
   readonly image?: string | null;
+  readonly userID: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -168,6 +163,7 @@ type LazyReview = {
   readonly reviewrating?: number | null;
   readonly reviewapproved?: boolean | null;
   readonly image?: string | null;
+  readonly userID: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -257,6 +253,7 @@ type EagerStore = {
   readonly IGlink?: string | null;
   readonly TWEETlin?: string | null;
   readonly GSlink?: string | null;
+  readonly storelocation?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -284,6 +281,7 @@ type LazyStore = {
   readonly IGlink?: string | null;
   readonly TWEETlin?: string | null;
   readonly GSlink?: string | null;
+  readonly storelocation?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -313,6 +311,9 @@ type EagerUser = {
   readonly FBlink?: string | null;
   readonly IGlink?: string | null;
   readonly TWEETlink?: string | null;
+  readonly userlocation?: string | null;
+  readonly Reviews?: (Review | null)[] | null;
+  readonly Posts?: (Post | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -336,6 +337,9 @@ type LazyUser = {
   readonly FBlink?: string | null;
   readonly IGlink?: string | null;
   readonly TWEETlink?: string | null;
+  readonly userlocation?: string | null;
+  readonly Reviews: AsyncCollection<Review>;
+  readonly Posts: AsyncCollection<Post>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -357,8 +361,6 @@ type EagerPost = {
   readonly content?: string | null;
   readonly image?: string | null;
   readonly userID: string;
-  readonly storeID: string;
-  readonly streamerID: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -374,8 +376,6 @@ type LazyPost = {
   readonly content?: string | null;
   readonly image?: string | null;
   readonly userID: string;
-  readonly storeID: string;
-  readonly streamerID: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

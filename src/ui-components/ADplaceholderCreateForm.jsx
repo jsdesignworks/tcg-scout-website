@@ -31,9 +31,6 @@ export default function ADplaceholderCreateForm(props) {
     createdby: undefined,
     locationcreated: undefined,
     usericon: undefined,
-    userID: undefined,
-    streamerID: undefined,
-    storeID: undefined,
   };
   const [title, setTitle] = React.useState(initialValues.title);
   const [subtitle, setSubtitle] = React.useState(initialValues.subtitle);
@@ -44,9 +41,6 @@ export default function ADplaceholderCreateForm(props) {
     initialValues.locationcreated
   );
   const [usericon, setUsericon] = React.useState(initialValues.usericon);
-  const [userID, setUserID] = React.useState(initialValues.userID);
-  const [streamerID, setStreamerID] = React.useState(initialValues.streamerID);
-  const [storeID, setStoreID] = React.useState(initialValues.storeID);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setTitle(initialValues.title);
@@ -56,9 +50,6 @@ export default function ADplaceholderCreateForm(props) {
     setCreatedby(initialValues.createdby);
     setLocationcreated(initialValues.locationcreated);
     setUsericon(initialValues.usericon);
-    setUserID(initialValues.userID);
-    setStreamerID(initialValues.streamerID);
-    setStoreID(initialValues.storeID);
     setErrors({});
   };
   const validations = {
@@ -69,9 +60,6 @@ export default function ADplaceholderCreateForm(props) {
     createdby: [{ type: "URL" }],
     locationcreated: [{ type: "IpAddress" }],
     usericon: [{ type: "URL" }],
-    userID: [{ type: "Required" }],
-    streamerID: [{ type: "Required" }],
-    storeID: [{ type: "Required" }],
   };
   const runValidationTasks = async (fieldName, value) => {
     let validationResponse = validateField(value, validations[fieldName]);
@@ -98,9 +86,6 @@ export default function ADplaceholderCreateForm(props) {
           createdby: createdby || undefined,
           locationcreated,
           usericon: usericon || undefined,
-          userID,
-          streamerID,
-          storeID,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -156,9 +141,6 @@ export default function ADplaceholderCreateForm(props) {
               createdby,
               locationcreated,
               usericon,
-              userID,
-              streamerID,
-              storeID,
             };
             const result = onChange(modelFields);
             value = result?.title ?? value;
@@ -188,9 +170,6 @@ export default function ADplaceholderCreateForm(props) {
               createdby,
               locationcreated,
               usericon,
-              userID,
-              streamerID,
-              storeID,
             };
             const result = onChange(modelFields);
             value = result?.subtitle ?? value;
@@ -220,9 +199,6 @@ export default function ADplaceholderCreateForm(props) {
               createdby,
               locationcreated,
               usericon,
-              userID,
-              streamerID,
-              storeID,
             };
             const result = onChange(modelFields);
             value = result?.image ?? value;
@@ -252,9 +228,6 @@ export default function ADplaceholderCreateForm(props) {
               createdby,
               locationcreated,
               usericon,
-              userID,
-              streamerID,
-              storeID,
             };
             const result = onChange(modelFields);
             value = result?.link ?? value;
@@ -284,9 +257,6 @@ export default function ADplaceholderCreateForm(props) {
               createdby: value,
               locationcreated,
               usericon,
-              userID,
-              streamerID,
-              storeID,
             };
             const result = onChange(modelFields);
             value = result?.createdby ?? value;
@@ -316,9 +286,6 @@ export default function ADplaceholderCreateForm(props) {
               createdby,
               locationcreated: value,
               usericon,
-              userID,
-              streamerID,
-              storeID,
             };
             const result = onChange(modelFields);
             value = result?.locationcreated ?? value;
@@ -348,9 +315,6 @@ export default function ADplaceholderCreateForm(props) {
               createdby,
               locationcreated,
               usericon: value,
-              userID,
-              streamerID,
-              storeID,
             };
             const result = onChange(modelFields);
             value = result?.usericon ?? value;
@@ -364,102 +328,6 @@ export default function ADplaceholderCreateForm(props) {
         errorMessage={errors.usericon?.errorMessage}
         hasError={errors.usericon?.hasError}
         {...getOverrideProps(overrides, "usericon")}
-      ></TextField>
-      <TextField
-        label="User id"
-        isRequired={true}
-        isReadOnly={false}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              title,
-              subtitle,
-              image,
-              link,
-              createdby,
-              locationcreated,
-              usericon,
-              userID: value,
-              streamerID,
-              storeID,
-            };
-            const result = onChange(modelFields);
-            value = result?.userID ?? value;
-          }
-          if (errors.userID?.hasError) {
-            runValidationTasks("userID", value);
-          }
-          setUserID(value);
-        }}
-        onBlur={() => runValidationTasks("userID", userID)}
-        errorMessage={errors.userID?.errorMessage}
-        hasError={errors.userID?.hasError}
-        {...getOverrideProps(overrides, "userID")}
-      ></TextField>
-      <TextField
-        label="Streamer id"
-        isRequired={true}
-        isReadOnly={false}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              title,
-              subtitle,
-              image,
-              link,
-              createdby,
-              locationcreated,
-              usericon,
-              userID,
-              streamerID: value,
-              storeID,
-            };
-            const result = onChange(modelFields);
-            value = result?.streamerID ?? value;
-          }
-          if (errors.streamerID?.hasError) {
-            runValidationTasks("streamerID", value);
-          }
-          setStreamerID(value);
-        }}
-        onBlur={() => runValidationTasks("streamerID", streamerID)}
-        errorMessage={errors.streamerID?.errorMessage}
-        hasError={errors.streamerID?.hasError}
-        {...getOverrideProps(overrides, "streamerID")}
-      ></TextField>
-      <TextField
-        label="Store id"
-        isRequired={true}
-        isReadOnly={false}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              title,
-              subtitle,
-              image,
-              link,
-              createdby,
-              locationcreated,
-              usericon,
-              userID,
-              streamerID,
-              storeID: value,
-            };
-            const result = onChange(modelFields);
-            value = result?.storeID ?? value;
-          }
-          if (errors.storeID?.hasError) {
-            runValidationTasks("storeID", value);
-          }
-          setStoreID(value);
-        }}
-        onBlur={() => runValidationTasks("storeID", storeID)}
-        errorMessage={errors.storeID?.errorMessage}
-        hasError={errors.storeID?.hasError}
-        {...getOverrideProps(overrides, "storeID")}
       ></TextField>
       <Flex
         justifyContent="space-between"

@@ -5,9 +5,12 @@
  **************************************************************************/
 
 import * as React from "react";
+import { User } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type ProfileCardProps = React.PropsWithChildren<Partial<FlexProps> & {
+    user?: User;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
 export default function ProfileCard(props: ProfileCardProps): React.ReactElement;

@@ -26,6 +26,7 @@ export declare type UserCreateFormInputValues = {
     FBlink?: string;
     IGlink?: string;
     TWEETlink?: string;
+    userlocation?: string;
 };
 export declare type UserCreateFormValidationValues = {
     memberstart?: ValidationFunction<string>;
@@ -41,6 +42,7 @@ export declare type UserCreateFormValidationValues = {
     FBlink?: ValidationFunction<string>;
     IGlink?: ValidationFunction<string>;
     TWEETlink?: ValidationFunction<string>;
+    userlocation?: ValidationFunction<string>;
 };
 export declare type FormProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type UserCreateFormOverridesProps = {
@@ -58,6 +60,7 @@ export declare type UserCreateFormOverridesProps = {
     FBlink?: FormProps<TextFieldProps>;
     IGlink?: FormProps<TextFieldProps>;
     TWEETlink?: FormProps<TextFieldProps>;
+    userlocation?: FormProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type UserCreateFormProps = React.PropsWithChildren<{
     overrides?: UserCreateFormOverridesProps | undefined | null;

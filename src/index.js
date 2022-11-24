@@ -2,15 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals'
+import reportWebVitals from './reportWebVitals';
 
-import config from './aws-exports'
-import Amplify from 'aws-amplify'
+import awsconfig from './aws-exports';
+import { Amplify, Auth } from 'aws-amplify';
 
-import { AmplifyProvider } from '@aws-amplify/ui-react'
-import '@aws-amplify/ui-react/styles.css'
+import { AmplifyProvider } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+import '@fontsource/inter/variable.css';
+// import { Storage } from "@aws-amplify/storage"
 
-Amplify.configure(config)
+// await Storage.put("test.txt", "Hello");
+
+Amplify.configure(awsconfig);
 
 ReactDOM.render(
   <AmplifyProvider>
